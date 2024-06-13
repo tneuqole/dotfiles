@@ -300,6 +300,7 @@ require('lazy').setup({
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+        ['<leader>a'] = { name = 'Harpoon', _ = 'which_key_ignore' },
       }
       -- visual mode
       require('which-key').register({
@@ -386,11 +387,12 @@ require('lazy').setup({
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-      vim.keymap.set('n', '<leader>sf', function()
+      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>sa', function()
         builtin.find_files {
           no_ignore = true,
         }
-      end, { desc = '[S]earch [F]iles' })
+      end, { desc = '[S]earch [A]ll files' })
       vim.keymap.set('n', '<leader>st', builtin.git_files, { desc = '[S]earch Gi[T]' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
@@ -910,7 +912,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -918,6 +920,44 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+
+    -- references:
+    -- https://github.com/tjdevries/config.nvim/blob/master/lua/custom/plugins/harpoon.lua
+    -- https://github.com/ThePrimeagen/init.lua/blob/master/lua/theprimeagen/lazy/local.lua
+    config = function()
+      local harpoon = require 'harpoon'
+      harpoon:setup()
+
+      vim.keymap.set('n', '<leader>aa', function()
+        harpoon:list():add()
+      end, { desc = 'Add' })
+      vim.keymap.set('n', '<leader>am', function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end, { desc = 'Quick Menu' })
+
+      vim.keymap.set('n', '<leader>ap', function()
+        harpoon:list():prev()
+      end, { desc = 'Next' })
+      vim.keymap.set('n', '<leader>an', function()
+        harpoon:list():next()
+      end, { desc = 'Previous' })
+
+      -- Set <space>1..<space>5 be my shortcuts to moving to the files
+      for _, idx in ipairs { 1, 2, 3, 4, 5 } do
+        vim.keymap.set('n', string.format('<space>%d', idx), function()
+          harpoon:list():select(idx)
+        end, { desc = string.format('Harpoon Select %d', idx) })
+
+        vim.keymap.set('n', string.format('<space>a%d', idx), function()
+          harpoon:list():replace_at(idx)
+        end, { desc = string.format('Harpoon Replace %d', idx) })
+      end
+    end,
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

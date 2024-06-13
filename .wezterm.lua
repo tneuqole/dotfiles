@@ -18,6 +18,7 @@ config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
 config.default_workspace = "main"
+config.font_size = 14.0
 
 -- Dim inactive panes
 config.inactive_pane_hsb = {
@@ -180,4 +181,3 @@ wezterm.on("update-status", function(window, pane)
 end)
 
 return config
-
