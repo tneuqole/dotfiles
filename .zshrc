@@ -84,7 +84,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-bindkey "^ " autosuggest-accept
+bindkey "^y" autosuggest-accept
 
 # User configuration
 
