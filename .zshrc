@@ -125,3 +125,5 @@ export GO111MODULE=auto
 alias n="nvim"
 
 eval "$(zoxide init zsh)"
+
+export EDITOR=nvim
