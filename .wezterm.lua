@@ -18,7 +18,7 @@ config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
 config.default_workspace = "main"
-config.font_size = 14.0
+config.font_size = 15.0
 
 -- Dim inactive panes
 config.inactive_pane_hsb = {

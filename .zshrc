@@ -122,7 +122,7 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(direnv hook zsh)"
 export GO111MODULE=auto
 
-alias n="nvim"
+alias n="nvim ."
 
 eval "$(zoxide init zsh)"
 
