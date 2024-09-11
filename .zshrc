@@ -121,6 +121,7 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(direnv hook zsh)"
 export GO111MODULE=auto
+export PATH=$PATH:$HOME/go/bin
 
 alias n="nvim ."
 

@@ -17,9 +17,6 @@ require('lazy').setup {
 
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-    -- "gc" to comment visual regions/lines
-    { 'numToStr/Comment.nvim', opts = {} },
-
     {
       'catppuccin/nvim',
       priority = 1000, -- Make sure to load this before all the other start plugins.
