@@ -117,3 +117,5 @@ bindkey "^y" autosuggest-accept
 
 alias n="nvim ."
 export EDITOR=nvim
+
+eval "$(/usr/bin/mise activate zsh)"
