@@ -119,3 +119,6 @@ alias n="nvim ."
 export EDITOR=nvim
 
 eval "$(/usr/bin/mise activate zsh)"
+
+export PATH=$HOME/.cargo/bin:$PATH
+

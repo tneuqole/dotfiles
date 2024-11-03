@@ -31,14 +31,14 @@ keybinds {
         bind "j" "Down" { MoveFocus "Down"; }
         bind "k" "Up" { MoveFocus "Up"; }
         bind "p" { SwitchFocus; }
-        bind "n" { NewPane; SwitchToMode "Locked"; }
-        bind "d" { NewPane "Down"; SwitchToMode "Locked"; }
-        bind "r" { NewPane "Right"; SwitchToMode "Locked"; }
-        bind "q" { CloseFocus; SwitchToMode "Locked"; }
-        bind "f" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
-        bind "z" { TogglePaneFrames; SwitchToMode "Locked"; }
-        bind "w" { ToggleFloatingPanes; SwitchToMode "Locked"; }
-        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
+        bind "n" { NewPane;}
+        bind "d" { NewPane "Down";}
+        bind "r" { NewPane "Right";}
+        bind "q" { CloseFocus;}
+        bind "f" { ToggleFocusFullscreen;}
+        bind "z" { TogglePaneFrames;}
+        bind "w" { ToggleFloatingPanes;}
+        bind "e" { TogglePaneEmbedOrFloating;}
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
     move {
@@ -55,28 +55,28 @@ keybinds {
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "l" "Right" "Down" "j" { GoToNextTab; }
-        bind "n" { NewTab; SwitchToMode "Locked"; }
-        bind "q" { CloseTab; SwitchToMode "Locked"; }
-        bind "s" { ToggleActiveSyncTab; SwitchToMode "Locked"; }
-        bind "b" { BreakPane; SwitchToMode "Locked"; }
-        bind "]" { BreakPaneRight; SwitchToMode "Locked"; }
-        bind "[" { BreakPaneLeft; SwitchToMode "Locked"; }
-        bind "1" { GoToTab 1; SwitchToMode "Locked"; }
-        bind "2" { GoToTab 2; SwitchToMode "Locked"; }
-        bind "3" { GoToTab 3; SwitchToMode "Locked"; }
-        bind "4" { GoToTab 4; SwitchToMode "Locked"; }
-        bind "5" { GoToTab 5; SwitchToMode "Locked"; }
-        bind "6" { GoToTab 6; SwitchToMode "Locked"; }
-        bind "7" { GoToTab 7; SwitchToMode "Locked"; }
-        bind "8" { GoToTab 8; SwitchToMode "Locked"; }
-        bind "9" { GoToTab 9; SwitchToMode "Locked"; }
+        bind "n" { NewTab;}
+        bind "q" { CloseTab;}
+        bind "s" { ToggleActiveSyncTab;}
+        bind "b" { BreakPane;}
+        bind "]" { BreakPaneRight;}
+        bind "[" { BreakPaneLeft;}
+        bind "1" { GoToTab 1;}
+        bind "2" { GoToTab 2;}
+        bind "3" { GoToTab 3;}
+        bind "4" { GoToTab 4;}
+        bind "5" { GoToTab 5;}
+        bind "6" { GoToTab 6;}
+        bind "7" { GoToTab 7;}
+        bind "8" { GoToTab 8;}
+        bind "9" { GoToTab 9;}
         bind "Tab" { ToggleTab; }
     }
     scroll {
         bind "Ctrl s" { SwitchToMode "Locked"; }
-        bind "e" { EditScrollback; SwitchToMode "Locked"; }
+        bind "e" { EditScrollback;}
         bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
-        bind "Ctrl c" { ScrollToBottom; SwitchToMode "Locked"; }
+        bind "Ctrl c" { ScrollToBottom;}
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
         bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
@@ -88,7 +88,7 @@ keybinds {
     }
     search {
         bind "Ctrl s" { SwitchToMode "Locked"; }
-        bind "Ctrl c" { ScrollToBottom; SwitchToMode "Locked"; }
+        bind "Ctrl c" { ScrollToBottom;}
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
         bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
@@ -106,7 +106,7 @@ keybinds {
         bind "Enter" { SwitchToMode "Search"; }
     }
     renametab {
-        bind "Ctrl c" { SwitchToMode "Locked"; }
+        // bind "Ctrl c" { SwitchToMode "Locked"; }
         bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
     }
     renamepane {
@@ -141,26 +141,26 @@ keybinds {
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
-        bind "Ctrl b" { Write 2; SwitchToMode "Locked"; }
-        bind "\"" { NewPane "Down"; SwitchToMode "Locked"; }
-        bind "%" { NewPane "Right"; SwitchToMode "Locked"; }
-        bind "z" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
-        bind "c" { NewTab; SwitchToMode "Locked"; }
+        bind "Ctrl b" { Write 2;}
+        bind "\"" { NewPane "Down";}
+        bind "%" { NewPane "Right";}
+        bind "z" { ToggleFocusFullscreen;}
+        bind "c" { NewTab;}
         bind "," { SwitchToMode "RenameTab"; }
-        bind "p" { GoToPreviousTab; SwitchToMode "Locked"; }
-        bind "n" { GoToNextTab; SwitchToMode "Locked"; }
-        bind "Left" { MoveFocus "Left"; SwitchToMode "Locked"; }
-        bind "Right" { MoveFocus "Right"; SwitchToMode "Locked"; }
-        bind "Down" { MoveFocus "Down"; SwitchToMode "Locked"; }
-        bind "Up" { MoveFocus "Up"; SwitchToMode "Locked"; }
-        bind "h" { MoveFocus "Left"; SwitchToMode "Locked"; }
-        bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
-        bind "j" { MoveFocus "Down"; SwitchToMode "Locked"; }
-        bind "k" { MoveFocus "Up"; SwitchToMode "Locked"; }
+        bind "p" { GoToPreviousTab;}
+        bind "n" { GoToNextTab;}
+        bind "Left" { MoveFocus "Left";}
+        bind "Right" { MoveFocus "Right";}
+        bind "Down" { MoveFocus "Down";}
+        bind "Up" { MoveFocus "Up";}
+        bind "h" { MoveFocus "Left";}
+        bind "l" { MoveFocus "Right";}
+        bind "j" { MoveFocus "Down";}
+        bind "k" { MoveFocus "Up";}
         bind "o" { FocusNextPane; }
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; }
-        bind "q" { CloseFocus; SwitchToMode "Locked"; }
+        bind "q" { CloseFocus;}
     }
     shared_except "locked" {
         bind "Ctrl Space" { SwitchToMode "Locked"; }
