@@ -27,6 +27,17 @@ config.inactive_pane_hsb = {
 	brightness = 0.5,
 }
 
+config.colors = {
+	split = "#7287fd",
+}
+
+config.window_padding = {
+	left = 2,
+	right = 2,
+	top = 2,
+	bottom = 2,
+}
+
 -- Keys
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
