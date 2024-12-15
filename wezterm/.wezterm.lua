@@ -14,10 +14,10 @@ local config = wezterm.config_builder()
 
 config.color_scheme = "Catppuccin Frappe"
 config.window_background_opacity = 0.9
-config.window_decorations = "NONE"
+config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.font = wezterm.font("FiraMono Nerd Font Mono")
-config.font_size = 16.0
+config.font_size = 18.0
 config.use_fancy_tab_bar = false
 config.audible_bell = "Disabled"
 
@@ -118,9 +118,9 @@ config.key_tables = {
 }
 
 -- start in fullscreen
-wezterm.on("gui-startup", function()
-	local tab, pane, window = mux.spawn_window({})
-	window:gui_window():maximize()
-end)
+-- wezterm.on("gui-startup", function()
+-- 	local tab, pane, window = mux.spawn_window({})
+-- 	window:gui_window():maximize()
+-- end)
 
 return config
