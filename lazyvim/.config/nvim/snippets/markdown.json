@@ -1,0 +1,16 @@
+{
+  "newpost": {
+    "prefix": "newpost",
+    "body": [
+      "---",
+      "title: ${1:Title}",
+      "description: ${2:Description}",
+      "tags: [\"${3:tags}\"]",
+      "pubDate: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "draft: true",
+      "---",
+      "",
+      "$0"
+    ]
+  }
+}
